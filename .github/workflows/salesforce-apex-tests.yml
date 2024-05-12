@@ -16,3 +16,8 @@ jobs:
         uses: actions/labeler@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  reuse-apex-tests:
+    if: github.triggering_actor != 'github-classroom[bot]'
+    uses: Cloud-Code-Academy/developer-kickstart-materials/.github/workflows/salesforce-apex-tests.yml@main
+    secrets: inherit
